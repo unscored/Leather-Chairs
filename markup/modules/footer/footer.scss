@@ -1,0 +1,131 @@
+/*******************************************************FOOTER****************************************************/
+
+footer {
+	background: #FFFFFF;
+	padding: 40px 40px 70px 40px;
+	@include respond-to(tablet-portrait) {
+		padding: 20px;
+	}
+	@include respond-to(mobile) {
+		padding: 30px 20px;
+	}
+}
+.footer-list {
+	padding: 0 35px;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	@include respond-to(tablet-portrait) {
+		padding: 0;
+	}
+	@include respond-to(mobile) {
+		padding: 0;
+	}
+}
+.footer-list__item {
+	width: 30%;
+	h2 {
+		font-family: $ptserif;
+		font-weight: normal;
+		font-style: normal;
+		font-size: 20px;
+		line-height: 23px;
+		color: $brown;
+		padding: 0 0 16px 0;
+	}
+	@include respond-to(mobile) {
+		width: 100%;
+		padding: 0 0 30px 0;
+		&:last-child {
+			padding: 0;
+		}
+	}
+	&.twitter {
+		.footer-list__item__text {
+			a {
+				color: $brown;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			p {
+				font-family: $lato;
+				font-weight: normal;
+				font-style: normal;
+				font-size: 14px;
+				line-height: 17px;
+				color: $gray;
+				padding: 0 0 20px 0;
+				span {
+					font-size: 13px;
+					line-height: 16px;
+					color: $light-gray;
+				}
+				&:last-child {
+					padding: 10px 0 0 0;
+				}
+			}
+		}
+	}
+	&.services {
+		.footer-list__item__text {
+			ul {
+				li {
+					padding: 0 0 6px 0;
+					a {
+						font-family: $ptserif;
+						font-weight: normal;
+						font-style: normal;
+						font-size: 16px;
+						line-height: 19px;
+						color: $gray;
+						&:hover {
+							text-decoration: underline;
+						}
+						@include respond-to(tablet) {
+							font-size: 15px;
+							line-height: 18px;
+						}
+					}
+				}
+			} 
+		}
+	}
+	&.contact {
+		width: 22%;
+		@include respond-to(mobile) {
+			width: 100%;
+		}
+		.footer-list__item__text {
+			p {
+				font-family: $lato;
+				font-size: 13px;
+				line-height: 16px;
+				color: $gray;
+				padding: 0 0 15px 0;
+				span {
+					color: $brown;
+					&.phone {
+						font-family: $ptserif;
+						font-size: 18px;
+						line-height: 21px;
+						color: $brown;
+					}
+				}
+			}
+			a {
+				font-size: 14px;
+				line-height: 17px;
+				color: $brown;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+ 
+

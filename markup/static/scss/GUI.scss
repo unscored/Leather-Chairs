@@ -1,0 +1,90 @@
+/**********************************************ICONS*****************************************************/
+
+.icon { display: block; position: absolute; }
+.icon_mail {
+	@include bg($mail);
+	top: 50%;
+	left: 0;
+	transform: translate(0, -50%);
+	@include respond-to(mobile) {
+		top: 3px;
+		transform: translate(0, 0);
+	}
+}
+.icon_twitter {
+	position: relative;
+	top: 2px;
+	display: block;
+	@include bg($twitter);
+}
+.icon_facebook {
+	display: block;
+	@include bg($facebook);
+}
+.icon_pinterest {
+	display: block;
+	@include bg($pinterest);
+}
+.icon_twitter-brown {
+	display: block;
+	@include bg($twitter-brown);
+}
+.icon_next-button {
+	display: block;
+	@include bg($next-button);
+}
+.icon_prev-button {
+	display: block;
+	@include bg($prev-button);
+}
+.icon_folow-twitter {
+	display: block;
+	@include bg($folow-twitter);
+}
+.icon_face-like {
+	display: block;
+	@include bg($face-like);
+}
+.icon_tweet-like {
+	display: block;
+	@include bg($tweet-like);
+}
+.icon_google {
+	display: block;
+	@include bg($google);
+}
+.icon_inshare {
+	display: block;
+	@include bg($inshare);
+}
+.icon_pinit {
+	display: block;
+	@include bg($pinit);
+}
+.icon_mobile-menu {
+	display: block;
+	@include bg($mobile-menu);
+}
+.icon_mobile-search {
+	display: block;
+	@include bg($mobile-search);
+}
+/************************BUTTONS********************************************/
+
+.btn {
+	display: inline-block;
+	border-radius: 14px;
+	padding: 0 15px 0 15px;
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 15px;
+	line-height: 27px;
+	color: #FFFFFF;
+}
+.btn_brown {
+	background: $brown;
+	&:hover {
+		background: #754132;
+	}
+}

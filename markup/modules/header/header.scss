@@ -1,0 +1,303 @@
+/*****************************************************HEADER************************************************************/
+
+.container {
+	width: 1086px;
+	margin: 0 auto;
+	padding: 30px 0 0 0;
+	box-sizing: border-box;
+	@include respond-to(tablet) {
+		width: 100%;
+		padding: 0;
+	}
+	@include respond-to(mobile) {
+		width: 100%;
+		padding: 0;
+	}
+}
+.container__i {
+	overflow: hidden;
+}
+header {
+	background: #FFFFFF;
+	position: relative;
+	padding: 25px 40px 5px 40px;
+	position: relative;
+	z-index: 2;
+	@include respond-to(tablet-portrait) {
+		padding: 25px 20px 5px 20px;
+	}
+	@include respond-to(mobile) {
+		padding: 60px 20px 5px 20px;
+	}
+}
+.main-logo {
+	display: block;
+	position: absolute;
+	top: -29px;
+	left: -22px;
+	z-index: 2;
+	width: 251px;
+	img {
+		display: block;
+		width: 100%;
+	}
+	@include respond-to(mobile) {
+		width: 193px;
+		left: -32px;
+	}
+}
+.mobile-search, .mobile-menu {
+	position: absolute;
+	display: none;
+	top: 10px;
+	@include respond-to(mobile) {
+		display: block;
+	}
+}
+.mobile-search {
+	right: 45px;
+}
+.mobile-menu {
+	right: 10px;
+}
+.header-top {
+	padding: 0 0 30px 200px;
+	@include respond-to(tablet-portrait) {
+		padding: 0 0 20px 200px;
+	}
+	@include respond-to(mobile) {
+		padding: 0 0 20px 0;
+	}
+}
+.search {
+	width: 241px;
+	float: right;
+	position: relative;
+	input[type="text"] {
+		border-radius: 16px;
+		width: 100%;
+		height: 39px;
+		border: 1px solid #d6d6d6;
+		font-family: $ptserif;
+		font-size: 16px;
+		line-height: 19px;
+		color: $brown;
+		outline: none;
+		background: #eeece9;
+		padding: 0 35px 0 10px;
+		box-sizing: border-box;
+		@include placeholder-color($brown);
+	}
+	input[type="submit"] {
+		position: absolute;
+		background: #eeece9;
+		@include bg ($play-button);
+		top: 50%;
+		right: 7px;
+		cursor: pointer;
+		border: none;
+		outline: none;
+		transform: translate(0, -50%);
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	}
+	@include respond-to(tablet-portrait) {
+		width: 45%;
+	}
+	@include respond-to(mobile) {
+		width: 93%;
+		position: absolute;
+		top: 50px;
+		right: 0;
+		transform: translate(100%, 0);
+		transition: transform .8s;
+		z-index: 8;
+	}
+}
+.open-search {
+	.search {
+		right: 10px;
+		transform: translate(0, 0);
+	}
+}
+.phone-top {
+	float: right;
+	padding: 5px 15px 0 28px;
+	p {
+		font-family: $ptserif;
+		font-size: 24px;
+		line-height: 27px;
+		color: $brown;
+	}
+	@include respond-to(mobile) {
+		padding: 0;
+		p {
+			font-size: 21px;
+			line-height: 25px;
+		}
+	}
+}
+.socials {
+	float: right;
+	padding: 10px 0 0 0;
+	li {
+		float: left;
+		padding:  0 10px 0 0;
+		&:last-child {
+			padding: 0;
+		}
+	}
+	@include respond-to(mobile) {
+		display: none;
+	}
+}
+nav {
+	position: relative;
+	padding: 0 0 0 210px;
+	ul {
+		li {
+			float: left;
+			padding: 0 15px 0 0;
+			position: relative;
+			margin: 0 0 7px 0;
+			&:last-child {
+				padding: 0;
+			}
+			@include respond-to(mobile) {
+				padding: 0;
+			}
+			a {
+				font-family: $ptserif;
+				font-size: 17px;
+				line-height: 21px;
+				color: #888888;
+				padding: 1px 0;
+				&:hover {
+					color: $brown;
+				}
+				@include respond-to(tablet) {
+					font-size: 16px;
+					line-height: 20px;
+				}
+				@include respond-to(mobile) {
+					padding: 5px 10px;
+					color: $brown;
+					display: block;
+				}
+			}
+			&.active {
+				a {
+					color: $brown;
+					border-bottom: 2px solid $brown;
+					@include respond-to(mobile) {
+						color: $brown;
+						border-bottom: none;
+					}
+				}
+			}
+			&:hover {
+				> ul {
+					display: block;
+					@include respond-to(mobile) {
+						display: none;
+					}
+				}
+			}
+			@include respond-to(mobile) {
+				float: none;
+				border-bottom: 1px solid $brown;
+				margin: 0;
+				position: relative;
+				&:last-child {
+					border-bottom: none;
+				}
+				&:after {
+					content: "+";
+					font-size: 8px;
+					line-height: 18px;
+					position: absolute;
+					color: #FFFFFF;
+					top: 7px;
+					right: 10px;
+					background: $brown;
+					height: 18px;
+					width: 19px;
+					border-radius: 3px;
+					cursor: pointer;
+					text-align: center;
+				}
+				&.opened {
+					&:after {
+						content: "-";
+					}
+				}
+			}
+			> ul {
+				position: absolute;
+				top: 100%;
+				left: -9999px;
+				width: 220px;
+				padding: 5px 0 0 0;
+				z-index: 5;
+				@include respond-to(mobile) {
+					width: 100%;
+					position: relative;
+					top: 0;
+					left: 0;
+					right: 0;
+					padding: 0;
+				}
+				> li {
+					background: $brown;
+					padding: 0;
+					margin: 0;
+					border-bottom: 1px solid #dcd1ce;
+					width: 100%;
+					> a {
+						display: block;
+						font-family: $ptserif;
+						font-size: 16px;
+						line-height: 19px;
+						color: #dcd1ce;
+						padding: 5px 5px 5px 10px;
+						&:hover {
+							color: #dcd1ce;
+							background: #704538;
+						}
+						@include respond-to(mobile) {
+							padding: 5px;
+						}
+					}
+					@include respond-to(mobile) {
+						padding: 0;
+						&:after {
+							content: "";
+							display: none;
+						}
+					}
+				}
+			} 
+		}
+
+	}
+	@include respond-to(mobile) {
+		position: absolute;
+		top: 50px;
+		right: 0;
+		left: 0;
+		transform: translate(100%, 0);
+		transition: transform .8s;
+		z-index: 8;
+		background: #e5e1dc;
+		padding: 5px 0;
+	}
+}
+.open-menu
+{
+	nav {
+		transform: translate(0, 0);
+	}
+}
+.hide {
+	display: none;
+}
